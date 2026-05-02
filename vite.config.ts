@@ -27,5 +27,5 @@ export default defineConfig({
       allow: ["..", "../dist"],
     },
   },
-  publicDir: "assets",
+  publicDir: resolve(__dirname, "src/assets"), // ← копіює assets в dist
 });
