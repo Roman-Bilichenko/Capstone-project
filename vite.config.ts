@@ -1,11 +1,10 @@
 import { defineConfig } from "vite";
-import { resolve } from "path";
 
 export default defineConfig({
   root: "./src/",
   appType: "mpa",
   build: {
-    outDir: "../dist",      // ← збирати в корневий dist
+    outDir: "../dist",
     emptyOutDir: true,
   },
   server: {
@@ -13,9 +12,5 @@ export default defineConfig({
     strictPort: true,
     host: true,
     open: true,
-    fs: {
-      allow: ["..", "../dist"],
-    },
   },
-  publicDir: "public",
 });
