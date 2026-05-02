@@ -1,8 +1,13 @@
 import { defineConfig } from "vite";
+import { resolve } from "path";
 
 export default defineConfig({
   root: "./src/",
-  appType:"mpa",
+  appType: "mpa",
+  build: {
+    outDir: "../dist",      // ← збирати в корневий dist
+    emptyOutDir: true,
+  },
   server: {
     port: 5173,
     strictPort: true,
@@ -13,9 +18,4 @@ export default defineConfig({
     },
   },
   publicDir: "public",
-  resolve: {
-    alias: {
-      "/dist": "/../dist",
-    },
-  },
 });

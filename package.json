@@ -18,7 +18,7 @@
     "stylelint": "stylelint \"src/**/*.scss\"",
     "stylelint:fix": "stylelint \"src/**/*.scss\" --fix",
     "format": "prettier --write .",
-    "build:prod": "vite build"
+    "build:prod": "sass src/scss/main.scss dist/css/main.css --no-source-map && tsc && vite build"
   },
   "repository": {
     "type": "git",
