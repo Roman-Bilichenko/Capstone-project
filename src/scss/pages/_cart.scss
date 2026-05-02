@@ -1,0 +1,287 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
+
+.cart {
+  &__hero {
+    position: relative;
+    width: 100%;
+    min-height: rem(229);
+    background:
+      linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)),
+      url("../../assets/images/backgrounds/banner-cart.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+    margin-bottom: $spacing-xl;
+
+    @include onTablet {
+      min-height: rem(180);
+    }
+  }
+
+  &__hero-title {
+    font-size: rem(50);
+    font-weight: $font-weight-bold;
+
+    @include onMobile {
+      font-size: rem(36);
+    }
+  }
+
+  &__empty {
+    text-align: center;
+    font-weight: $font-weight-bold;
+    font-size: rem(24);
+    color: $color-text;
+    padding: $spacing-xxl 0;
+
+    a {
+      color: $color-fuchsia;
+
+      @include hover(color, $color-text);
+    }
+  }
+
+  &__table {
+    margin-bottom: $spacing-xl;
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr 2fr repeat(4, 1fr);
+    gap: $spacing-xl;
+    place-items: center center;
+    padding: $spacing-md 0;
+    background-color: $color-text;
+    font-size: rem(18);
+    font-weight: $font-weight-bold;
+    color: $color-white;
+    letter-spacing: rem(1);
+    text-transform: uppercase;
+
+    @include onTablet {
+      gap: $spacing-md;
+      font-size: rem(12);
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 2fr repeat(4, 1fr);
+    grid-template-areas: "img name price quantity total delete";
+    gap: $spacing-xl;
+    place-items: center center;
+    padding: $spacing-md 0;
+    border-bottom: 2px solid $color-fuchsia;
+
+    @include onTablet {
+      gap: $spacing-md;
+    }
+
+    @include onMobile {
+      grid-template-columns: rem(90) repeat(6, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-areas:
+        "img name name name name name name"
+        "img quantity quantity quantity quantity quantity delete"
+        "img price price price total total total";
+      gap: $spacing-sm;
+      padding: $spacing-md;
+    }
+  }
+
+  &__item-img {
+    grid-area: img;
+    width: rem(120);
+    height: rem(120);
+    object-fit: contain;
+    border-radius: rem(4);
+
+    @include onTablet {
+      width: rem(100);
+      height: rem(100);
+    }
+
+    @include onMobile {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__item-name {
+    grid-area: name;
+    font-size: rem(18);
+    font-weight: $font-weight-bold;
+    color: $color-black;
+    line-height: 1.2;
+
+    @include onMobile {
+      font-size: rem(14);
+    }
+  }
+
+  &__item-price {
+    grid-area: price;
+    font-size: rem(17);
+    font-weight: $font-weight-bold;
+    color: $color-black;
+
+    @include onMobile {
+      justify-self: start;
+      font-size: rem(13);
+
+      &::before {
+        content: "Price: ";
+      }
+    }
+  }
+
+  &__item-quantity {
+    grid-area: quantity;
+    display: flex;
+    align-items: center;
+
+    button {
+      width: rem(40);
+      height: rem(40);
+      border: none;
+      cursor: pointer;
+      font-weight: $font-weight-medium;
+      font-size: rem(34);
+
+      @include hover(scale, 1.2);
+    }
+
+    input {
+      width: rem(40);
+      height: rem(40);
+      text-align: center;
+      border: none;
+      font-size: rem(25);
+      font-weight: $font-weight-medium;
+      outline: none;
+      background: $color-white;
+    }
+  }
+
+  &__item-total {
+    grid-area: total;
+    font-size: rem(17);
+    font-weight: $font-weight-bold;
+    color: $color-black;
+
+    @include onMobile {
+      justify-self: end;
+      font-size: rem(13);
+
+      &::before {
+        content: "Total: ";
+      }
+    }
+  }
+
+  &__item-delete {
+    grid-area: delete;
+    cursor: pointer;
+    padding: rem(6);
+
+    @include onMobile {
+      padding: 0;
+    }
+
+    img {
+      width: rem(18);
+      height: rem(20);
+
+      @include hover(opacity, 0.6);
+    }
+  }
+
+  &__bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xxl;
+    align-items: start;
+
+    @include onTablet {
+      grid-template-columns: 1fr;
+      gap: $spacing-xl;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-md;
+
+    @include onMobile {
+      flex-direction: column;
+    }
+
+    &-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: rem(60);
+      width: rem(224);
+      font-size: rem(15);
+      text-transform: uppercase;
+    }
+  }
+
+  &__totals {
+    justify-self: end;
+    width: 100%;
+    max-width: rem(571);
+    background-color: $color-text;
+    padding: $spacing-xl;
+    margin-bottom: $spacing-xxl;
+
+    @include onTablet {
+      justify-self: start;
+      max-width: 100%;
+    }
+
+    @include onMobile {
+      padding: $spacing-lg;
+    }
+  }
+
+  &__totals-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $spacing-md;
+    padding-bottom: $spacing-md;
+    font-size: rem(17);
+    color: $color-white;
+    font-weight: $font-weight-bold;
+    letter-spacing: rem(2);
+    border-bottom: 2px solid $color-fuchsia;
+
+    &--total {
+      font-size: rem(20);
+      color: $color-white;
+      border-bottom: none;
+    }
+  }
+
+  &__totals-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(229);
+    height: rem(42);
+    font-weight: $font-weight-bold;
+    font-size: rem(18);
+    text-transform: uppercase;
+    letter-spacing: rem(2);
+  }
+}

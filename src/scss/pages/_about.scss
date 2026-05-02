@@ -1,0 +1,321 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
+
+.about {
+  &__hero {
+    position: relative;
+    width: 100%;
+    min-height: rem(550);
+    background:
+      linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)),
+      url("../../assets/images/backgrounds/banner-about.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+    margin-bottom: $spacing-lg;
+
+    @include onTablet {
+      min-height: rem(300);
+    }
+  }
+
+  &__title {
+    font-size: rem(50);
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-md;
+  }
+
+  &__hero-text {
+    font-size: rem(17);
+    color: $color-star-gray;
+    margin-bottom: rem(7);
+  }
+
+  &__section-title {
+    font-size: rem(40);
+    font-weight: $font-weight-black;
+    color: $color-black;
+    margin-bottom: $spacing-xl;
+
+    &--underline {
+      display: inline-block;
+      border-bottom: 2px solid $color-fuchsia;
+      padding-bottom: rem(10);
+    }
+  }
+
+  &__features {
+    padding: $spacing-xxl 0;
+  }
+
+  &__features-grid {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $spacing-xxl;
+
+    @include onTablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-xxl;
+    }
+
+    @include onMobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__feature {
+    text-align: center;
+    max-width: rem(256);
+
+    @include onMobile {
+      max-width: 80%;
+    }
+
+    &-icon {
+      width: rem(62);
+      height: rem(62);
+      margin: 0 auto $spacing-md;
+    }
+
+    h3 {
+      font-size: rem(20);
+      font-weight: $font-weight-bold;
+      line-height: 1.4;
+      color: $color-black;
+      margin-bottom: $spacing-md;
+    }
+
+    p {
+      font-size: rem(14);
+      color: $color-black;
+      line-height: 1.6;
+    }
+  }
+
+  &__new-arrivals {
+    margin-bottom: $spacing-xxl;
+  }
+
+  &__team {
+  margin-bottom: $spacing-xxl;
+  text-align: center;
+}
+
+&__team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-lg;
+
+  @include onTablet {
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+  }
+}
+
+&__member {
+  &-img {
+    width: rem(410);
+    height: rem(340);
+    object-fit: cover;
+    margin: 0 auto $spacing-lg;
+  }
+
+  h3 {
+    font-size: rem(22);
+    font-weight: $font-weight-bold;
+    margin-bottom: rem(27);
+    text-transform: uppercase;
+    color: $color-black;
+  }
+
+  p {
+    font-size: rem(17);
+    color: $color-black;
+  }
+}
+
+  &__offer {
+    text-align: center;
+
+    &-bg {
+      background:
+        linear-gradient(rgb(0 0 0 / 55%), rgb(0 0 0 / 55%)),
+        url("../assets/images/backgrounds/offer-banner.png");
+      background-size: cover;
+      background-position: center;
+      padding: $spacing-xxl;
+      margin-bottom: $spacing-md;
+      color: $color-white;
+    }
+
+    &-content {
+      max-width: rem(500);
+      margin: 0 auto;
+    }
+
+    &-percent {
+      font-size: rem(140);
+      font-weight: $font-weight-black;
+      display: block;
+      line-height: 1;
+      margin-bottom: $spacing-md;
+
+      @include onTablet {
+        font-size: rem(80);
+      }
+    }
+
+    &-title {
+      font-size: rem(28);
+      font-weight: $font-weight-black;
+      margin-bottom: $spacing-md;
+    }
+
+    &-text {
+      font-size: rem(15);
+      margin-bottom: $spacing-lg;
+      line-height: 1.6;
+    }
+
+    &-bottom {
+      font-size: rem(14);
+      color: $color-text;
+    }
+  }
+}
+
+.arrivals {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-xxl;
+  align-items: center;
+
+  @include onTablet {
+    grid-template-columns: 1fr;
+  }
+
+  &__title {
+    margin-bottom: $spacing-lg;
+    font-size: rem(40);
+  }
+
+  &__text {
+    font-size: rem(17);
+    color: $color-text;
+    line-height: 1.7;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+    @include onTablet {
+      order: -1;
+    }
+  }
+}
+
+.offer-banner {
+  margin-bottom: $spacing-xxl;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-xxl;
+    background-image: url("../../assets/images/backgrounds/offer-banner.png");
+    background-size: cover;
+    background-position: center;
+    padding: rem(80) $spacing-xxl;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgb(0 0 0 / 50%);
+    }
+
+    @include onTablet {
+      flex-direction: column;
+      text-align: center;
+      padding: $spacing-xl;
+    }
+  }
+
+  &__left {
+    flex: 0 0 52%;
+    position: relative;
+
+    @include onTablet {
+      flex: 0 0 100%;
+    }
+  }
+
+  &__percent {
+    font-size: rem(220);
+    font-weight: $font-weight-black;
+    color: $color-white;
+    line-height: 1;
+    margin-bottom: $spacing-sm;
+
+    @include onDesktop {
+      font-size: rem(160);
+    }
+
+    @include onTablet {
+      font-size: rem(120);
+    }
+  }
+
+  &__text {
+    font-size: rem(20);
+    font-weight: $font-weight-regular;
+    color: $color-white;
+  }
+
+  &__right {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+
+    @include onTablet {
+      flex: 0 0 100%;
+    }
+  }
+
+  &__title {
+    font-size: rem(40);
+    font-weight: $font-weight-black;
+    color: $color-white;
+    margin-bottom: $spacing-lg;
+
+    @include onTablet {
+      font-size: rem(32);
+    }
+  }
+
+  &__desc {
+    font-size: rem(17);
+    color: $color-white;
+    line-height: 1.7;
+    margin-bottom: $spacing-xl;
+    max-width: rem(400);
+
+    @include onTablet {
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+}

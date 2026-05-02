@@ -1,0 +1,44 @@
+{
+  "name": "fundamentals-project-ts-template",
+  "version": "1.0.0",
+  "description": "Capstone Project TS Template",
+  "main": "index.js",
+  "scripts": {
+    "predev": "npm run build",
+    "dev": "concurrently \"npm:dev:sass\" \"npm:dev:ts\" \"npm:dev:vite\"",
+    "dev:vite": "vite",
+    "dev:sass": "sass src/scss/main.scss dist/css/main.css --no-source-map --watch",
+    "dev:ts": "tsc --watch",
+    "build": "sass src/scss/main.scss dist/css/main.css --no-source-map && tsc",
+    "compile": "sass src/scss/main.scss dist/css/main.css --no-source-map",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint \"src/**/*.{ts,js}\"",
+    "lint:fix": "eslint \"src/**/*.{ts,js}\" --fix",
+    "stylelint": "stylelint \"src/**/*.scss\"",
+    "stylelint:fix": "stylelint \"src/**/*.scss\" --fix",
+    "format": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "Roman Bilichenko",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.59.1",
+    "@typescript-eslint/parser": "^8.59.1",
+    "concurrently": "^9.2.1",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.8.3",
+    "sass": "^1.99.0",
+    "stylelint": "^17.9.1",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "stylelint-scss": "^7.0.0",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.8"
+  }
+}

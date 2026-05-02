@@ -1,0 +1,29 @@
+@use "./functions.scss" as *;
+
+$color-fuchsia: #B92770;
+$color-dark-fuchsia: #A32263;
+$color-black: #000;
+$color-white: #fff;
+$color-gray: #f5f5f5;
+$color-border: #727174;
+$color-text: #504E4A;
+$color-star-gray: #E9E9ED;
+$color-star-gold: #F5B423;
+$main-page-bg: #E7E8E9;
+$font-family: 'Montserrat', sans-serif;
+$font-size-base: 16px;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-wide: 1440px;
+$spacing-sm: rem(10);
+$spacing-md: rem(18);
+$spacing-lg: rem(32);
+$spacing-xl: rem(50);
+$spacing-xxl: rem(90);
+$effect-duration: 0.3s;
+$container-width: rem(1300)

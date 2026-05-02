@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Best Shop — Catalog</title>
+    <link rel="stylesheet" href="../../dist/css/main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__top">
+          <div class="header__social">
+            <a href="https://www.facebook.com/" class="header__social-link">
+              <img src="../assets/images/icons/facebook.svg" alt="Facebook" />
+            </a>
+            <a href="https://x.com/" class="header__social-link">
+              <img src="../assets/images/icons/twitter.svg" alt="Twitter" />
+            </a>
+            <a href="https://www.instagram.com/" class="header__social-link">
+              <img src="../assets/images/icons/instagram.svg" alt="Instagram" />
+            </a>
+          </div>
+
+          <a href="/index.html" class="header__logo">
+            <img
+              class="header__logo-img"
+              src="../assets/images/icons/logo-icon.svg"
+              alt="Logo"
+            />
+            <span class="header__logo-text">Best Shop</span>
+          </a>
+
+          <div class="header__actions">
+            <a href="#" class="header__action-link">
+              <img src="../assets/images/icons/user.svg" alt="User" />
+            </a>
+            <a href="/html/cart.html" class="header__action-link header__cart">
+              <img src="../assets/images/icons/shopping-cart.svg" alt="Cart" />
+              <span class="header__cart-count">0</span>
+            </a>
+            <button class="header__burger" id="burger-btn" aria-label="Menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="header__overlay" id="header-overlay"></div>
+
+        <nav class="header__nav" id="header-nav" aria-label="Main navigation">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a href="/index.html" class="header__nav-link">Home</a>
+            </li>
+            <li class="header__nav-item">
+              <a
+                href="/html/catalog.html"
+                class="header__nav-link header__nav-link--active"
+              >
+                Catalog
+                <img src="../assets/images/icons/arrow.svg" alt="arrow" />
+              </a>
+            </li>
+            <li class="header__nav-item">
+              <a href="/html/about.html" class="header__nav-link">About Us</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="/html/contact.html" class="header__nav-link"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="catalog">
+      <div class="container">
+        <div class="catalog__top">
+          <p class="catalog__results">Showing 1–12 of 0 results</p>
+
+          <div class="catalog__controls">
+            <button
+              class="catalog__toggle-filters btn btn--outline-dark"
+              id="toggle-filters-btn"
+            >
+              Filters
+            </button>
+
+            <div class="catalog__sort">
+              <select
+                class="catalog__sort-select"
+                id="sort-select"
+                aria-label="Sort products"
+              >
+                <option value="default">Default Sorting</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="popularity">Popularity</option>
+                <option value="rating">Rating</option>
+              </select>
+            </div>
+
+            <div class="catalog__search-box">
+              <input
+                type="text"
+                id="search-input"
+                placeholder="Search Models"
+                aria-label="Search Models"
+              />
+              <img
+                src="../assets/images/icons/search-icon.svg"
+                alt="search"
+                id="search-btn"
+                aria-label="Search"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog__filters-panel" id="filters-panel">
+          <div class="catalog__filters-row">
+            <div class="catalog__filter-field">
+              <label class="catalog__filter-label" for="filter-size"
+                >Size</label
+              >
+              <select class="catalog__filter-select" id="filter-size">
+                <option value="">Choose option</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="S-L">S-L</option>
+                <option value="S, M, XL">S, M, XL</option>
+              </select>
+            </div>
+
+            <div class="catalog__filter-field">
+              <label class="catalog__filter-label" for="filter-color"
+                >Color</label
+              >
+              <select class="catalog__filter-select" id="filter-color">
+                <option value="">Choose option</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="black">Black</option>
+                <option value="grey">Grey</option>
+                <option value="yellow">Yellow</option>
+                <option value="pink">Pink</option>
+              </select>
+            </div>
+
+            <div class="catalog__filter-field">
+              <label class="catalog__filter-label" for="filter-category"
+                >Category</label
+              >
+              <select class="catalog__filter-select" id="filter-category">
+                <option value="">Choose option</option>
+                <option value="carry-ons">Carry-ons</option>
+                <option value="suitcases">Suitcases</option>
+                <option value="luggage sets">Luggage sets</option>
+                <option value="kids' luggage">Kids' luggage</option>
+              </select>
+            </div>
+
+            <div class="catalog__filter-field catalog__filter-field--sale">
+              <label class="catalog__filter-label" for="filter-sale"
+                >Sales</label
+              >
+              <div class="catalog__sale-toggle">
+                <input
+                  type="checkbox"
+                  id="filter-sale"
+                  aria-label="Filter by sale"
+                />
+                <span class="catalog__sale-toggle-mark"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="catalog__filters-actions">
+            <button
+              class="btn btn--primary catalog__clear-btn"
+              id="clear-filters-btn"
+              aria-label="Clear all filters"
+            >
+              Clear Filters
+            </button>
+            <button
+              class="btn btn--primary catalog__hide-btn"
+              id="hide-filters-btn"
+              aria-label="Hide filters"
+            >
+              Hide Filters
+            </button>
+          </div>
+        </div>
+
+        <div class="catalog__content">
+          <div class="catalog__grid"></div>
+
+          <aside class="catalog__sidebar" aria-label="Top best sets sidebar">
+            <h3 class="catalog__sidebar-title">Top Best Sets</h3>
+
+            <div class="sidebar__item">
+              <img
+                src="../assets/images/products/set-of-suitcases-red-small.png"
+                alt="set"
+              />
+              <div>
+                <p>Primis in faucibus aenean laoreet rhoncus ipsum eget.</p>
+                <div class="sidebar__rating">★★★★★</div>
+                <span class="sidebar__price">$1000</span>
+              </div>
+            </div>
+            <div class="sidebar__item">
+              <img
+                src="../assets/images/products/set-of-suitcases-black-small.png"
+                alt="set"
+              />
+              <div>
+                <p>Vestibulum in elementum erat interdum et malesuada fames.</p>
+                <div class="sidebar__rating">★★★★☆</div>
+                <span class="sidebar__price">$1200</span>
+              </div>
+            </div>
+            <div class="sidebar__item">
+              <img
+                src="../assets/images/products/set-of-suitcases-blue-small.png"
+                alt="set"
+              />
+              <div>
+                <p>Laoreet rhoncus ipsum eget tempus praesent convallis.</p>
+                <div class="sidebar__rating">★★★★☆</div>
+                <span class="sidebar__price">$2100</span>
+              </div>
+            </div>
+            <div class="sidebar__item">
+              <img
+                src="../assets/images/products/set-of-suitcases-yellow-small.png"
+                alt="set"
+              />
+              <div>
+                <p>
+                  Interdum et malesuada fames ante ipsum primis in faucibus.
+                </p>
+                <div class="sidebar__rating">★★★★☆</div>
+                <span class="sidebar__price">$1500</span>
+              </div>
+            </div>
+            <div class="sidebar__item">
+              <img
+                src="../assets/images/products/set-of-suitcases-green-small.png"
+                alt="set"
+              />
+              <div>
+                <p>Rhoncus ipsum eget tempus praesent convallis fermentum.</p>
+                <div class="sidebar__rating">★★★★☆</div>
+                <span class="sidebar__price">$1100</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="catalog__pagination"></div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <section class="footer__benefits" aria-labelledby="benefits-heading">
+        <div class="footer__benefits-waves">
+          <img
+            src="../assets/images/backgrounds/footer-wave.svg"
+            alt=""
+            class="footer__benefits-wave"
+          />
+          <img
+            src="../assets/images/backgrounds/footer-wave.svg"
+            alt=""
+            class="footer__benefits-wave"
+          />
+          <img
+            src="../assets/images/backgrounds/footer-wave.svg"
+            alt=""
+            class="footer__benefits-wave"
+          />
+          <img
+            src="../assets/images/backgrounds/footer-wave.svg"
+            alt=""
+            class="footer__benefits-wave"
+          />
+          <img
+            src="../assets/images/backgrounds/footer-wave.svg"
+            alt=""
+            class="footer__benefits-wave"
+          />
+          <img
+            src="../assets/images/backgrounds/footer-wave.svg"
+            alt=""
+            class="footer__benefits-wave"
+          />
+        </div>
+        <div class="container">
+          <h2 class="benefits__title">Our Benefits</h2>
+          <div class="benefits__grid">
+            <div class="benefits__item">
+              <span class="benefits__icon">
+                <img
+                  src="../assets/images/icons/footer-benefits-1.png"
+                  alt="benefit"
+                />
+              </span>
+              <p class="benefits__text">
+                Velit nisl sodales eget donec quis. volutpat orci.
+              </p>
+            </div>
+            <div class="benefits__item">
+              <span class="benefits__icon">
+                <img
+                  src="../assets/images/icons/footer-benefits-2.png"
+                  alt="benefit"
+                />
+              </span>
+              <p class="benefits__text">
+                Dolor eu varius. Morbi fermentum velit nisl.
+              </p>
+            </div>
+            <div class="benefits__item">
+              <span class="benefits__icon">
+                <img
+                  src="../assets/images/icons/footer-benefits-3.png"
+                  alt="benefit"
+                />
+              </span>
+              <p class="benefits__text">
+                Malesuada fames ac ante ipsum primis in faucibus.
+              </p>
+            </div>
+            <div class="benefits__item">
+              <span class="benefits__icon">
+                <img
+                  src="../assets/images/icons/footer-benefits-4.png"
+                  alt="benefit"
+                />
+              </span>
+              <p class="benefits__text">
+                Nisl sodales eget donec quis. volutpat orci.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="footer__main" aria-label="Footer main content">
+        <div class="container">
+          <div class="footer__row">
+            <div class="footer__content">
+              <div class="footer__nav">
+                <div class="footer__col">
+                  <a
+                    href="about.html"
+                    class="footer__label"
+                    aria-label="About Us"
+                    >About Us</a
+                  >
+                  <ul class="footer__list">
+                    <li>
+                      <a href="#" aria-label="Organisation">Organisation</a>
+                    </li>
+                    <li><a href="#" aria-label="Partners">Partners</a></li>
+                    <li><a href="#" aria-label="Clients">Clients</a></li>
+                  </ul>
+                </div>
+                <div class="footer__col">
+                  <h3 class="footer__label">Interesting Links</h3>
+                  <ul class="footer__list">
+                    <li>
+                      <a href="#" aria-label="Photo Gallery">Photo Gallery</a>
+                    </li>
+                    <li><a href="#" aria-label="Our Team">Our Team</a></li>
+                    <li><a href="#" aria-label="Socials">Socials</a></li>
+                  </ul>
+                </div>
+                <div class="footer__col">
+                  <h3 class="footer__label">Achievements</h3>
+                  <ul class="footer__list">
+                    <li>
+                      <a href="#" aria-label="Winning Awards">Winning Awards</a>
+                    </li>
+                    <li><a href="#" aria-label="Press">Press</a></li>
+                    <li>
+                      <a href="#" aria-label="Our Amazing Clients"
+                        >Our Amazing Clients</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="footer__shipping">
+                <h3 class="footer__shipping-label">Shipping Information</h3>
+                <p class="footer__shipping-text">
+                  Bendum dolor eu varius. Morbi fermentum velitsodales egetonec.
+                  volutpat orci. Sed ipsum felis, tristique egestas et,
+                  convallis ac velitn consequat nec luctus.
+                </p>
+              </div>
+            </div>
+            <aside class="footer__contact" aria-label="Contact information">
+              <a
+                href="contact.html"
+                class="footer__contact-label"
+                aria-label="Contact Us"
+                >Contact Us</a
+              >
+              <p class="footer__contact-description">
+                Nulla eleifend pulvinar purus, molestie euismod odio imperdiet
+                ac. Ut sit amet erat nec nibh rhoncus varius in non lorem.
+              </p>
+              <ul class="footer__contact-details">
+                <li class="footer__contact-item">
+                  <span class="footer__contact-icon">
+                    <img
+                      src="../assets/images/icons/footer-phone.svg"
+                      alt="phone"
+                    />
+                  </span>
+                  Phone: (+63) 236 6322
+                </li>
+                <li class="footer__contact-item">
+                  <span class="footer__contact-icon">
+                    <img
+                      src="../assets/images/icons/footer-mail.svg"
+                      alt="mail"
+                    />
+                  </span>
+                  public@news.com
+                </li>
+                <li class="footer__contact-item">
+                  <span class="footer__contact-icon">
+                    <img
+                      src="../assets/images/icons/footer-clock.svg"
+                      alt="clock"
+                    />
+                  </span>
+                  Mon - Fri: 10am - 6pm <br />Sat - Sun: 10am - 6pm
+                </li>
+                <li class="footer__contact-item">
+                  <span class="footer__contact-icon">
+                    <img
+                      src="../assets/images/icons/footer-map-pin.svg"
+                      alt="map-pin"
+                    />
+                  </span>
+                  639 Jade Valley, Washington Dc
+                </li>
+              </ul>
+            </aside>
+          </div>
+          <div class="footer__bottom">
+            <p class="footer__copy">© Copyright 2025</p>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <script type="module" src="../../dist/js/main.js"></script>
+
+    <div class="modal" id="login-modal">
+      <div class="modal__overlay"></div>
+      <div class="modal__content">
+        <button class="modal__close" id="modal-close" aria-label="Close modal">
+          <img src="../assets/images/icons/close.svg" alt="Close" />
+        </button>
+        <h2 class="modal__title">Log In</h2>
+        <form class="modal__form" id="login-form">
+          <div class="modal__field">
+            <label for="login-email"
+              >Email address <span class="modal__field-star">*</span></label
+            >
+            <input
+              type="email"
+              id="login-email"
+              placeholder="Enter your email"
+              required
+              autocomplete="email"
+            />
+            <span class="modal__error" id="email-error"></span>
+          </div>
+          <div class="modal__field">
+            <label for="login-password"
+              >Password <span class="modal__field-star">*</span></label
+            >
+            <div class="modal__password-wrapper">
+              <input
+                type="password"
+                id="login-password"
+                placeholder="Enter your password"
+                required
+                autocomplete="current-password"
+              />
+              <button
+                type="button"
+                class="modal__toggle-password"
+                id="toggle-password"
+                aria-label="Toggle password visibility"
+              >
+                <img
+                  src="../assets/images/icons/eye.svg"
+                  alt="Show password"
+                  id="toggle-password-icon"
+                />
+              </button>
+            </div>
+            <span class="modal__error" id="password-error"></span>
+          </div>
+          <div class="modal__options">
+            <label class="modal__checkbox">
+              <input type="checkbox" id="remember-me" />
+              <span class="modal__checkbox-mark"></span>
+              Remember me
+            </label>
+            <a href="#" class="modal__forgot" aria-label="Forgot your password"
+              >Forgot Your Password?</a
+            >
+          </div>
+          <button type="submit" class="btn btn--primary modal__submit">
+            Log In
+          </button>
+          <p class="modal__success" id="login-success"></p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

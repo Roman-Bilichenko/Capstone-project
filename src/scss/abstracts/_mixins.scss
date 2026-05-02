@@ -1,0 +1,44 @@
+@use "../abstracts/functions.scss" as *;
+@use "./variables.scss" as *;
+
+@mixin onWide {
+  @media (min-width: $breakpoint-wide) {
+    @content;
+  }
+}
+
+// Desktop  (1024px - 1440px)
+@mixin onDesktop {
+  @media (max-width: #{$breakpoint-wide - 1px}) {
+    @content;
+  }
+}
+
+// Tablet (768px - 1024px)
+@mixin onTablet {
+  @media (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+
+// Mobile (480px - 768px)
+@mixin onMobile {
+  @media (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+
+// MobileSm (smallest 480px)
+@mixin onMobileSm {
+  @media (max-width: #{$breakpoint-mobile - 1px}) {
+    @content;
+  }
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} $effect-duration;
+
+  &:hover {
+    #{$property}: $toValue;
+  }
+}

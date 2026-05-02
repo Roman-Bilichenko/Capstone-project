@@ -1,0 +1,193 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
+
+.contact {
+  &__hero {
+    position: relative;
+    width: 100%;
+    min-height: rem(550);
+    background:
+      linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)),
+      url("../../assets/images/backgrounds/banner-contact.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+    margin-bottom: $spacing-lg;
+
+    @include onTablet {
+      min-height: rem(300);
+    }
+  }
+
+  &__title {
+    font-size: rem(50);
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-md;
+  }
+
+  &__hero-text {
+    font-size: rem(17);
+    color: $color-star-gray;
+    margin-bottom: rem(7);
+  }
+
+  &__features {
+    padding: $spacing-xxl 0;
+  }
+
+  &__features-grid {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $spacing-xxl;
+
+    @include onTablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-xxl;
+    }
+
+    @include onMobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__feature {
+    text-align: center;
+    max-width: rem(256);
+
+    @include onMobile {
+      max-width: 80%;
+    }
+
+    &-icon {
+      width: rem(62);
+      height: rem(62);
+      margin: 0 auto $spacing-md;
+    }
+
+    h3 {
+      font-size: rem(20);
+      font-weight: $font-weight-bold;
+      line-height: 1.4;
+      color: $color-black;
+      margin-bottom: $spacing-md;
+    }
+
+    p {
+      font-size: rem(14);
+      color: $color-black;
+      line-height: 1.6;
+    }
+  }
+
+  &__feedback {
+    margin-bottom: $spacing-xxl;
+  }
+
+  &__feedback-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xl;
+    align-items: center;
+
+    @include onTablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__feedback-image {
+    img {
+      width: 100%;
+      height: auto;
+      max-height: rem(700);
+      object-fit: cover;
+    }
+  }
+
+  &__feedback-title {
+    font-size: rem(25);
+    font-weight: $font-weight-bold;
+    color: $color-black;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__feedback-subtitle {
+    font-size: rem(17);
+    color: $color-black;
+    margin-bottom: $spacing-xl;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+
+    &__field {
+      display: flex;
+      flex-direction: column;
+      gap: rem(8);
+
+      label {
+        font-size: rem(18);
+        font-weight: $font-weight-bold;
+        color: $color-black;
+
+        .required {
+          color: $color-fuchsia;
+        }
+      }
+
+      input,
+      textarea {
+        padding: rem(12) rem(16);
+        border: 1px solid $color-dark-fuchsia;
+        font-family: $font-family;
+        font-size: rem(14);
+
+        &:focus {
+          outline: none;
+          border-color: $color-border;
+        }
+
+        &.input--error {
+          border-color: $color-fuchsia;
+        }
+      }
+
+      textarea {
+        height: rem(120);
+        resize: vertical;
+      }
+    }
+
+    &__error {
+      font-size: rem(12);
+      color: $color-fuchsia;
+      display: none;
+
+      &--visible {
+        display: block;
+      }
+    }
+
+    &__btn {
+      width: rem(90);
+      height: rem(40);
+      font-size: rem(12);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__message {
+      font-size: rem(14);
+      font-weight: $font-weight-bold;
+    }
+  }
+}

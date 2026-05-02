@@ -1,0 +1,236 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
+
+.footer {
+  &__benefits {
+    background-color: $color-text;
+    color: $color-white;
+    padding: $spacing-lg 0;
+    position: relative;
+    overflow: hidden;
+
+    &-waves {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      opacity: 0.1;
+    }
+
+    &-wave {
+      width: 100%;
+      flex: 1;
+      object-fit: cover;
+
+      &:not(:first-child) {
+        margin-top: -26px;
+      }
+    }
+
+    .benefits {
+      &__title {
+        font-size: rem(19);
+        font-weight: $font-weight-bold;
+        margin-bottom: $spacing-lg;
+      }
+
+      &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: $spacing-xxl;
+
+        @include onTablet {
+          grid-template-columns: repeat(2, 1fr);
+          gap: $spacing-xl;
+        }
+
+        @include onMobile {
+          grid-template-columns: 1fr;
+          gap: $spacing-md;
+        }
+      }
+
+      &__item {
+        display: flex;
+        align-items: center;
+        gap: rem(20);
+      }
+
+      &__icon {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: rem(60);
+          height: rem(60);
+          display: block;
+        }
+      }
+
+      &__text {
+        font-weight: $font-weight-medium;
+        font-size: rem(15);
+        line-height: 1.6;
+        opacity: 0.85;
+      }
+    }
+  }
+
+  &__main {
+    background-color: $color-white;
+    padding-top: $spacing-xxl;
+
+    @include onMobile {
+      padding-top: $spacing-lg;
+    }
+
+
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: $spacing-xl;
+
+    @include onDesktop {
+      gap: $spacing-xxl;
+    }
+
+    @include onTablet {
+      grid-template-columns: 1fr;
+      gap: $spacing-xl;
+    }
+
+    @include onMobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-md;
+    margin-bottom: $spacing-xl;
+
+    @include onMobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__label {
+    display: block;
+    font-size: rem(15);
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-md;
+    color: $color-black;
+  }
+
+  &__list {
+    li {
+      margin-bottom: rem(10);
+
+      a {
+        color: $color-black;
+        font-weight: $font-weight-regular;
+        font-size: rem(15);
+
+        @include hover(color, $color-fuchsia);
+      }
+    }
+  }
+
+  &__shipping {
+    &-label {
+      font-size: rem(15);
+      font-weight: $font-weight-bold;
+      color: $color-black;
+      margin-bottom: $spacing-md;
+    }
+
+    &-text {
+      font-size: rem(15);
+      font-weight: $font-weight-regular;
+      color: $color-black;
+      line-height: 1.7;
+    }
+  }
+
+  &__contact {
+    min-width: 412px;
+
+    @include onMobile {
+      min-width: 100%;
+    }
+
+    &-label {
+      display: block;
+      font-weight: $font-weight-bold;
+      font-size: rem(15);
+      color: $color-black;
+      margin-bottom: $spacing-md;
+    }
+
+    &-description {
+      font-size: rem(15);
+      font-weight: $font-weight-regular;
+      line-height: 1.7;
+      color: $color-black;
+      margin-bottom: $spacing-xl;
+    }
+
+    &-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-md $spacing-sm;
+
+      @include onMobileSm {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: $spacing-sm;
+      font-size: rem(15);
+      font-weight: $font-weight-regular;
+      line-height: 1.7;
+      color: $color-black;
+    }
+
+    &-icon {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__bottom {
+    margin: $spacing-xxl 0 $spacing-xl 0;
+    text-align: center;
+
+    @include onMobile {
+      margin: $spacing-lg 0 $spacing-md 0;
+    }
+
+
+    .footer__copy {
+      font-size: rem(14);
+      font-weight: $font-weight-regular;
+      color: #00000059;
+    }
+  }
+}

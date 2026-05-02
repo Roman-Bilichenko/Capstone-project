@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Best Shop</title>
+    <link rel="stylesheet" href="../../dist/css/main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__top">
+          <div class="header__social">
+            <a href="https://www.facebook.com/" class="header__social-link">
+              <img src="../assets/images/icons/facebook.svg" alt="Facebook" />
+            </a>
+            <a href="https://x.com/" class="header__social-link">
+              <img src="../assets/images/icons/twitter.svg" alt="Twitter" />
+            </a>
+            <a href="https://www.instagram.com/" class="header__social-link">
+              <img src="../assets/images/icons/instagram.svg" alt="Instagram" />
+            </a>
+          </div>
+
+          <a href="/index.html" class="header__logo">
+            <img
+              class="header__logo-img"
+              src="../assets/images/icons/logo-icon.svg"
+              alt="Logo"
+            />
+            <span class="header__logo-text">Best Shop</span>
+          </a>
+
+          <div class="header__actions">
+            <a href="#" class="header__action-link">
+              <img src="../assets/images/icons/user.svg" alt="User" />
+            </a>
+            <a href="/html/cart.html" class="header__action-link header__cart">
+              <img src="../assets/images/icons/shopping-cart.svg" alt="Cart" />
+              <span class="header__cart-count">0</span>
+            </a>
+
+            <button class="header__burger" id="burger-btn" aria-label="Menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="header__overlay" id="header-overlay"></div>
+
+        <nav class="header__nav" id="header-nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a href="/index.html" class="header__nav-link">Home</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="/html/catalog.html" class="header__nav-link">
+                Catalog
+                <img src="../assets/images/icons/arrow.svg" alt="arrow" />
+              </a>
+            </li>
+            <li class="header__nav-item">
+              <a href="/html/about.html" class="header__nav-link">About Us</a>
+            </li>
+            <li class="header__nav-item">
+              <a
+                href="/html/contact.html"
+                class="header__nav-link header__nav-link--active"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="contact">
+      <section class="contact__hero">
+        <h1 class="contact__title">Contact Us</h1>
+        <p class="contact__hero-text">
+          Duis vestibulum elit vel neque pharetra vulputate.
+        </p>
+        <p class="contact__hero-text">Duis rutrum non risus in imperdiet.</p>
+      </section>
+
+      <div class="container">
+        <section class="contact__features">
+          <div class="contact__features-grid">
+            <div class="contact__feature">
+              <img
+                src="../assets/images/icons/our-location.png"
+                alt="our location"
+                class="contact__feature-icon"
+              />
+              <h3>Our Location</h3>
+              <p>1234 NW Bobcat Lane, <br />St. Robert, MO 65584-5678</p>
+            </div>
+            <div class="contact__feature">
+              <img
+                src="../assets/images/icons/operating-time.png"
+                alt="Operating Time"
+                class="contact__feature-icon"
+              />
+              <h3>Operating Time</h3>
+              <p>Monday - Friday: 9am - 6 pm <br />Weekends: 10:30 am - 6pm</p>
+            </div>
+            <div class="contact__feature">
+              <img
+                src="../assets/images/icons/our-email.png"
+                alt="Our Email"
+                class="contact__feature-icon"
+              />
+              <h3>Our Email</h3>
+              <p>
+                best@shop.com <br />
+                info@bestshop.com
+              </p>
+            </div>
+            <div class="contact__feature">
+              <img
+                src="../assets/images/icons/call-us.png"
+                alt="Call Us"
+                class="contact__feature-icon"
+              />
+              <h3>Call Us</h3>
+              <p>
+                (268)142-8413 <br />
+                (760)265-2917
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact__feedback">
+          <div class="contact__feedback-grid">
+            <div class="contact__feedback-image">
+              <img
+                src="../assets/images/backgrounds/feedback-image.jpg"
+                alt="Feedback"
+              />
+            </div>
+            <div class="contact__feedback-form">
+              <h2 class="contact__feedback-title">
+                Your Feedback Is Much Appreciated!
+              </h2>
+              <p class="contact__feedback-subtitle">
+                We will contact you when you complete the following form!
+              </p>
+
+              <form id="contact-form" class="contact-form">
+                <div class="contact-form__field">
+                  <label for="contact-name"
+                    >Your Name <span class="required">*</span></label
+                  >
+                  <input type="text" id="contact-name" required />
+                </div>
+                <div class="contact-form__field">
+                  <label for="contact-email"
+                    >Your Email Address <span class="required">*</span></label
+                  >
+                  <input type="email" id="contact-email" required />
+                  <span class="contact-form__error" id="email-error"></span>
+                </div>
+                <div class="contact-form__field">
+                  <label for="contact-topic"
+                    >Topic <span class="required">*</span></label
+                  >
+                  <input type="text" id="contact-topic" required />
+                </div>
+                <div class="contact-form__field">
+                  <label for="contact-message"
+                    >Your Message <span class="required">*</span></label
+                  >
+                  <textarea id="contact-message" required></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn--primary contact-form__btn"
+                >
+                  Send
+                </button>
+                <p class="contact-form__message" id="contact-form-message"></p>
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <section class="footer__benefits">
+        <div class="footer__benefits-waves">
+          <img
+            src="../assets/images/backgrounds/footer-wave.svg"
+            alt=""
+            class="footer__benefits-wave"
+          />
+          <img
+            src="../assets/images/backgrounds/footer-wave.svg"
+            alt=""
+            class="footer__benefits-wave"
+          />
+          <img
+            src="../assets/images/backgrounds/footer-wave.svg"
+            alt=""
+            class="footer__benefits-wave"
+          />
+          <img
+            src="../assets/images/backgrounds/footer-wave.svg"
+            alt=""
+            class="footer__benefits-wave"
+          />
+          <img
+            src="../assets/images/backgrounds/footer-wave.svg"
+            alt=""
+            class="footer__benefits-wave"
+          />
+          <img
+            src="../assets/images/backgrounds/footer-wave.svg"
+            alt=""
+            class="footer__benefits-wave"
+          />
+        </div>
+        <div class="container">
+          <h2 class="benefits__title">Our Benefits</h2>
+          <div class="benefits__grid">
+            <div class="benefits__item">
+              <span class="benefits__icon">
+                <img
+                  src="../assets/images/icons/footer-benefits-1.png"
+                  alt="benefit"
+                />
+              </span>
+              <p class="benefits__text">
+                Velit nisl sodales eget donec quis. volutpat orci.
+              </p>
+            </div>
+            <div class="benefits__item">
+              <span class="benefits__icon">
+                <img
+                  src="../assets/images/icons/footer-benefits-2.png"
+                  alt="benefit"
+                />
+              </span>
+              <p class="benefits__text">
+                Dolor eu varius. Morbi fermentum velit nisl.
+              </p>
+            </div>
+            <div class="benefits__item">
+              <span class="benefits__icon">
+                <img
+                  src="../assets/images/icons/footer-benefits-3.png"
+                  alt="benefit"
+                />
+              </span>
+              <p class="benefits__text">
+                Malesuada fames ac ante ipsum primis in faucibus.
+              </p>
+            </div>
+            <div class="benefits__item">
+              <span class="benefits__icon">
+                <img
+                  src="../assets/images/icons/footer-benefits-4.png"
+                  alt="benefit"
+                />
+              </span>
+              <p class="benefits__text">
+                Nisl sodales eget donec quis. volutpat orci.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="footer__main">
+        <div class="container">
+          <div class="footer__row">
+            <div class="footer__content">
+              <div class="footer__nav">
+                <div class="footer__col">
+                  <a href="about.html" class="footer__label" aria-label="About Us">About Us</a>
+                  <ul class="footer__list">
+                    <li>
+                      <a href="#" aria-label="Organisation">Organisation</a>
+                    </li>
+                    <li><a href="#" aria-label="Partners">Partners</a></li>
+                    <li><a href="#" aria-label="Clients">Clients</a></li>
+                  </ul>
+                </div>
+                <div class="footer__col">
+                  <h3 class="footer__label">Interesting Links</h3>
+                  <ul class="footer__list">
+                    <li>
+                      <a href="#" aria-label="Photo Gallery">Photo Gallery</a>
+                    </li>
+                    <li><a href="#" aria-label="Our Team">Our Team</a></li>
+                    <li><a href="#" aria-label="Socials">Socials</a></li>
+                  </ul>
+                </div>
+                <div class="footer__col">
+                  <h3 class="footer__label">Achievements</h3>
+                  <ul class="footer__list">
+                    <li>
+                      <a href="#" aria-label="Winning Awards">Winning Awards</a>
+                    </li>
+                    <li><a href="#" aria-label="Press">Press</a></li>
+                    <li>
+                      <a href="#" aria-label="Our Amazing Clients"
+                        >Our Amazing Clients</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="footer__shipping">
+                <h3 class="footer__shipping-label">Shipping Information</h3>
+                <p class="footer__shipping-text">
+                  Bendum dolor eu varius. Morbi fermentum velitsodales egetonec.
+                  volutpat orci. Sed ipsum felis, tristique egestas et,
+                  convallis ac velitn consequat nec luctus.
+                </p>
+              </div>
+            </div>
+            <aside class="footer__contact">
+              <a href="contact.html" class="footer__contact-label" aria-label="Contact Us"
+                >Contact Us</a
+              >
+              <p class="footer__contact-description">
+                Nulla eleifend pulvinar purus, molestie euismod odio imperdiet
+                ac. Ut sit amet erat nec nibh rhoncus varius in non lorem.
+              </p>
+              <ul class="footer__contact-details">
+                <li class="footer__contact-item">
+                  <span class="footer__contact-icon">
+                    <img
+                      src="../assets/images/icons/footer-phone.svg"
+                      alt="phone"
+                    />
+                  </span>
+                  Phone: (+63) 236 6322
+                </li>
+                <li class="footer__contact-item">
+                  <span class="footer__contact-icon">
+                    <img
+                      src="../assets/images/icons/footer-mail.svg"
+                      alt="mail"
+                    />
+                  </span>
+                  public@news.com
+                </li>
+                <li class="footer__contact-item">
+                  <span class="footer__contact-icon">
+                    <img
+                      src="../assets/images/icons/footer-clock.svg"
+                      alt="clock"
+                    />
+                  </span>
+                  Mon - Fri: 10am - 6pm <br />Sat - Sun: 10am - 6pm
+                </li>
+                <li class="footer__contact-item">
+                  <span class="footer__contact-icon">
+                    <img
+                      src="../assets/images/icons/footer-map-pin.svg"
+                      alt="map-pin"
+                    />
+                  </span>
+                  639 Jade Valley, Washington Dc
+                </li>
+              </ul>
+            </aside>
+          </div>
+          <div class="footer__bottom">
+            <p class="footer__copy">© Copyright 2025</p>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <script type="module" src="../../dist/js/main.js"></script>
+
+    <div class="modal" id="login-modal">
+      <div class="modal__overlay"></div>
+      <div class="modal__content">
+        <button class="modal__close" id="modal-close">
+          <img src="../assets/images/icons/close.svg" alt="Close" />
+        </button>
+
+        <h2 class="modal__title">Log In</h2>
+
+        <form class="modal__form" id="login-form">
+          <div class="modal__field">
+            <label for="login-email"
+              >Email address <span class="modal__field-star">*</span></label
+            >
+            <input
+              type="email"
+              id="login-email"
+              placeholder="Enter your email"
+              required
+              autocomplete="email"
+            />
+            <span class="modal__error" id="email-error"></span>
+          </div>
+
+          <div class="modal__field">
+            <label for="login-password"
+              >Password <span class="modal__field-star">*</span></label
+            >
+            <div class="modal__password-wrapper">
+              <input
+                type="password"
+                id="login-password"
+                placeholder="Enter your password"
+                required
+                autocomplete="current-password"
+              />
+              <button
+                type="button"
+                class="modal__toggle-password"
+                id="toggle-password"
+                aria-label="Toggle password visibility"
+              >
+                <img
+                  src="../assets/images/icons/eye.svg"
+                  alt="Show password"
+                  id="toggle-password-icon"
+                />
+              </button>
+            </div>
+            <span class="modal__error" id="password-error"></span>
+          </div>
+
+          <div class="modal__options">
+            <label class="modal__checkbox">
+              <input type="checkbox" id="remember-me" />
+              <span class="modal__checkbox-mark"></span>
+              Remember me
+            </label>
+            <a href="#" class="modal__forgot" aria-label="Forgot your password"
+              >Forgot Your Password?</a
+            >
+          </div>
+
+          <button type="submit" class="btn btn--primary modal__submit">
+            Log In
+          </button>
+
+          <p class="modal__success" id="login-success"></p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

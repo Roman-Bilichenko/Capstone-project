@@ -1,0 +1,237 @@
+
+@use "../abstracts/functions.scss" as *;
+@use "../abstracts/variables.scss" as *;
+@use "../abstracts/mixins.scss" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: $color-white;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-lg 0 $spacing-lg 0;
+    background-color: $color-white;
+    border-bottom: rem(1) solid rgba($color-border, 0.4);
+
+    @include onTablet {
+      border-bottom: rem(0);
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: $spacing-md;
+
+    @include onTablet {
+      display: none;
+    }
+
+    &-link {
+      color: $color-black;
+
+      @include hover(scale, 1.1);
+
+      img {
+        width: rem(20);
+        height: rem(20);
+      }
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    color: $color-fuchsia;
+    font-size: rem(30);
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+
+    @include onMobile {
+      font-size: rem(22);
+    }
+
+    &-img {
+      background-color: $color-fuchsia;
+      border-radius: 8px;
+      padding: 2px 3px 4px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+  }
+
+  &__action-link {
+    color: $color-black;
+
+    &:nth-child(1) {
+      img {
+        width: rem(30);
+        height: rem(33);
+      }
+    }
+
+    &:nth-child(2) {
+      img {
+        width: rem(34);
+        height: rem(33);
+      }
+    }
+  }
+
+  &__cart {
+    position: relative;
+
+    &-count {
+      position: absolute;
+      top: -13px;
+      right: -12px;
+      color: $color-fuchsia;
+      border: rem(2) solid $color-fuchsia;
+      font-size: rem(12);
+      font-weight: $font-weight-bold;
+      width: rem(20);
+      height: rem(20);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &--hidden {
+        display: none;
+      }
+    }
+  }
+
+  &__burger {
+    display: none;
+    flex-direction: column;
+    gap: rem(5);
+    cursor: pointer;
+    z-index: 101;
+    padding: rem(5);
+
+    @include onTablet {
+      display: flex;
+    }
+
+    span {
+      display: block;
+      width: rem(25);
+      height: rem(3);
+      background-color: $color-black;
+      border-radius: rem(2);
+      transition:
+        transform $effect-duration,
+        opacity $effect-duration;
+    }
+
+    &--active {
+      span:nth-child(1) {
+        transform: rotate(45deg) translate(rem(5), rem(6));
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: rotate(-45deg) translate(rem(5), rem(-6));
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $spacing-lg 0 $spacing-lg 0;
+
+    @include onTablet {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: $color-white;
+      padding: rem(100) $spacing-lg $spacing-lg;
+      transform: translateX(-100%);
+      transition: transform $effect-duration;
+      z-index: 100;
+
+      &--open {
+        transform: translateX(0);
+      }
+    }
+
+    &-list {
+      display: flex;
+      gap: $spacing-lg;
+
+      @include onTablet {
+        flex-direction: column;
+        align-items: center;
+        gap: $spacing-xl;
+      }
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      gap: rem(4);
+      color: $color-black;
+      font-weight: $font-weight-bold;
+      font-size: rem(18);
+
+      @include onTablet {
+        font-size: rem(24);
+      }
+
+      img {
+        width: rem(12);
+        height: rem(7);
+
+        @include onTablet {
+          width: rem(16);
+          height: rem(10);
+        }
+      }
+
+      &:hover {
+        color: $color-fuchsia;
+      }
+
+      &--active {
+        color: $color-fuchsia;
+      }
+    }
+  }
+}
+
+.header__overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0 0 0 / 50%);
+  z-index: 99;
+  opacity: 0;
+  transition: opacity $effect-duration;
+
+  @include onTablet {
+    &--visible {
+      display: block;
+      opacity: 1;
+    }
+  }
+}

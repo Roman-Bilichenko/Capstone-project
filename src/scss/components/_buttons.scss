@@ -1,0 +1,20 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins.scss" as *;
+
+.btn {
+  display: inline-block;
+  width: auto;
+  padding: $spacing-md;
+  font-size: rem(18);
+  font-weight: $font-weight-bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &--primary {
+    background-color: $color-fuchsia;
+    color: $color-white;
+
+    @include hover(background-color, $color-dark-fuchsia);
+  }
+}

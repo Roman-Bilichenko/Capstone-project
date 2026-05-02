@@ -1,0 +1,485 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
+
+.product-details {
+  padding: $spacing-xxl 0;
+
+  &__main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xxl;
+    margin-bottom: $spacing-xxl;
+
+    @include onTablet {
+      grid-template-columns: 1fr;
+      gap: $spacing-xl;
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  &__main-img {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__thumbnails {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $spacing-sm;
+    margin-top: $spacing-md;
+  }
+
+  &__thumb {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color $effect-duration;
+
+    &:hover {
+      border-color: $color-fuchsia;
+    }
+  }
+
+  &__title {
+    font-size: rem(30);
+    font-weight: $font-weight-bold;
+    color: $color-black;
+    margin-bottom: $spacing-md;
+    line-height: 1.2;
+
+    @include onTablet {
+      font-size: rem(25);
+    }
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    color: gold;
+    margin-bottom: $spacing-md;
+  }
+
+  &__review-count {
+    font-size: rem(14);
+    color: $color-text;
+  }
+
+  &__price {
+    font-size: rem(20);
+    font-weight: $font-weight-bold;
+    color: $color-black;
+    margin-bottom: $spacing-md;
+  }
+
+  &__description {
+    font-size: rem(17);
+    line-height: 1.7;
+    color: $color-text;
+    margin-bottom: $spacing-lg;
+
+    &:last-of-type {
+      margin-bottom: $spacing-xl;
+    }
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+    margin-bottom: $spacing-xxl;
+  }
+
+  &__select {
+    flex: 1;
+
+    label {
+      font-size: rem(17);
+      font-weight: $font-weight-bold;
+      color: $color-text;
+      display: block;
+      margin-bottom: $spacing-sm;
+    }
+
+    select {
+      min-width: 100%;
+      padding: $spacing-sm $spacing-md;
+      border: 1px solid $color-border;
+      font-size: rem(14);
+      outline: none;
+      color: $color-border;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    margin-bottom: $spacing-xl;
+  }
+
+  &__quantity {
+    display: flex;
+    align-items: center;
+    height: rem(55);
+    border: 2px solid $color-fuchsia;
+
+    .quantity-btn {
+      width: rem(44);
+      height: rem(44);
+      background: $color-white;
+      font-weight: $font-weight-bold;
+      font-size: rem(25);
+      color: $color-border;
+      cursor: pointer;
+    }
+
+    input {
+      width: rem(60);
+      height: rem(44);
+      text-align: center;
+      border: none;
+      outline: none;
+      background: $color-white;
+      font-weight: $font-weight-bold;
+      font-size: rem(25);
+      color: $color-border;
+      padding: 0;
+      line-height: rem(44);
+    }
+  }
+
+  &__add-btn {
+    flex: 1;
+    height: rem(55);
+    padding: rem(12) rem(20);
+    font-size: rem(17);
+    font-weight: $font-weight-bold;
+    text-align: center;
+  }
+
+  &__payment {
+    font-size: rem(23);
+    font-weight: $font-weight-bold;
+    color: $color-border;
+
+    .payment-text {
+      @include onMobile {
+        display: inline-block;
+        margin-bottom: $spacing-md;
+      }
+    }
+
+    .payment-icons {
+      display: inline-flex;
+      align-items: center;
+      gap: $spacing-lg;
+      margin-left: $spacing-lg;
+
+      @include onMobileSm {
+        margin-left: 0;
+        gap: $spacing-md;
+      }
+
+      img {
+        height: rem(20);
+      }
+    }
+  }
+
+  &__tabs {
+    margin-bottom: $spacing-xxl;
+  }
+
+  &__related {
+    .related__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: $spacing-lg;
+
+      @include onTablet {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include onMobile {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
+
+.tabs {
+  &__nav {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-xxl;
+    margin-bottom: $spacing-lg;
+
+    @include onTablet {
+      gap: $spacing-lg;
+    }
+  }
+
+  &__btn {
+    padding: $spacing-sm 0;
+    text-transform: uppercase;
+    font-size: rem(17);
+    font-weight: $font-weight-bold;
+    color: $color-black;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+
+    &--active {
+      border-bottom-color: $color-fuchsia;
+    }
+  }
+
+  &__content {
+    display: none;
+    font-size: rem(15);
+    line-height: 1.7;
+    color: $color-text;
+
+    &--active {
+      display: block;
+    }
+  }
+}
+
+.reviews {
+  &__existing {
+    display: flex;
+    gap: $spacing-xxl;
+
+    @include onTablet {
+      flex-direction: column;
+    }
+  }
+
+  &__count {
+    font-size: rem(17);
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-xl;
+    color: $color-black;
+
+    @include onTablet {
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__list {
+    span {
+      color: $color-fuchsia;
+    }
+  }
+
+  &__item {
+    display: flex;
+    gap: $spacing-lg;
+  }
+
+  &__avatar {
+    width: rem(46);
+    height: rem(46);
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-md;
+  }
+
+  &__stars {
+    display: flex;
+    gap: rem(2);
+    font-size: rem(14);
+
+    .star--gold {
+      color: $color-star-gold;
+    }
+
+    .star--grey {
+      color: $color-star-gray;
+    }
+  }
+
+  &__name {
+    font-weight: $font-weight-bold;
+    font-size: rem(17);
+  }
+
+  &__date {
+    font-size: rem(13);
+    color: $color-border;
+    font-weight: $font-weight-regular;
+    margin-left: $spacing-md;
+  }
+
+  &__text {
+    font-size: rem(17);
+    line-height: 1.7;
+    color: $color-black;
+  }
+
+  &__add-title {
+    font-size: rem(17);
+    font-weight: $font-weight-bold;
+    color: $color-black;
+    margin-bottom: $spacing-md;
+  }
+
+  &__add-note {
+    font-size: rem(13);
+    color: $color-black;
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+  }
+
+  &__text {
+    font-weight: $font-weight-bold;
+    font-size: rem(13);
+    color: $color-black;
+    text-transform: uppercase;
+  }
+
+  &__stars {
+    display: flex;
+    gap: rem(4);
+
+    span {
+      font-size: rem(20);
+      cursor: pointer;
+      color: $color-star-gray;
+      transition: color $effect-duration;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: rem(6);
+
+    input,
+    textarea {
+      padding: $spacing-md;
+      border: 2px solid $color-fuchsia;
+      outline: none;
+      font-family: $font-family;
+      font-size: rem(14);
+    }
+
+    textarea {
+      height: rem(170);
+      resize: vertical;
+
+      @include onTablet {
+        height: rem(100);
+      }
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-md;
+
+    @include onMobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    cursor: pointer;
+    font-size: rem(14);
+
+    input {
+      display: none;
+    }
+  }
+
+  &__checkbox-mark {
+    width: rem(16);
+    height: rem(16);
+    border: 1px solid $color-border;
+    flex-shrink: 0;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+      width: rem(5);
+      height: rem(9);
+      border: solid $color-white;
+      border-width: 0 rem(2) rem(2) 0;
+      transform: rotate(45deg);
+      top: rem(1);
+      left: rem(5);
+    }
+  }
+
+  &__checkbox input:checked + &__checkbox-mark {
+    background-color: $color-fuchsia;
+    border-color: $color-fuchsia;
+
+    &::after {
+      display: block;
+    }
+  }
+
+  &__message {
+    font-size: rem(14);
+    font-weight: $font-weight-bold;
+  }
+}
+
+.review-form .btn--primary {
+  width: rem(90);
+  height: rem(40);
+  padding: 0;
+  font-size: rem(12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: $font-weight-bold;
+}
+
+.related__title-wrapper {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+}
+
+.related__title {
+  display: inline-block;
+  font-size: rem(30);
+  font-weight: $font-weight-bold;
+  color: $color-black;
+  border-bottom: 2px solid $color-fuchsia;
+  padding-bottom: $spacing-sm;
+}

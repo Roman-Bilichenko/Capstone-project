@@ -1,0 +1,31 @@
+@use "../abstracts/variables.scss" as *;
+@use "../abstracts/functions.scss" as *;
+@use "../abstracts/mixins.scss" as *;
+
+.container {
+  max-width: rem(1440);
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: rem(70);
+
+  @include onWide {
+    max-width: rem(1440);
+    padding-inline: rem(70);
+  }
+
+  @include onDesktop {
+    padding-inline: rem(55);
+  }
+
+  @include onTablet {
+    padding-inline: rem(39);
+  }
+
+  @include onMobile {
+    padding-inline: rem(20);
+  }
+
+  @include onMobileSm {
+    padding-inline: rem(16);
+  }
+}

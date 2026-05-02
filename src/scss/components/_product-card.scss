@@ -1,0 +1,67 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
+
+.product {
+  &__card {
+    position: relative;
+    transition: transform $effect-duration;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $spacing-lg;
+  }
+
+   &__sale {
+    position: absolute;
+    top: rem(15);
+    left: rem(15);
+    background-color: $color-fuchsia;
+    color: $color-white;
+    font-size: rem(15);
+    font-weight: $font-weight-bold;
+    padding: rem(7) rem(10);
+    z-index: 1;
+    display: none;
+  }
+
+  &__sale--active {
+    display: block;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin-bottom: $spacing-lg;
+    box-shadow: rem(-10) rem(20) rem(50) lightgrey;
+
+    @include hover(transform, scale(1.03));
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+  }
+
+  &__name {
+    flex: 1;
+    font-size: rem(19);
+    font-weight: $font-weight-bold;
+    color: $color-black;
+    margin-bottom: $spacing-md;
+    line-height: 1.4;
+  }
+
+  &__price {
+    font-size: rem(19);
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-md;
+  }
+
+  &__btn {
+    padding: $spacing-sm $spacing-lg;
+  }
+}
