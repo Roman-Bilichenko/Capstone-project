@@ -143,7 +143,7 @@
     flex: 0 0 50%;
     position: relative;
     min-height: rem(400);
-    background-image: url('../../assets/images/backgrounds/suitcases-main-banner.png');
+    background-image: url('/images/backgrounds/suitcases-main-banner.png');
     background-size: cover;
     background-position: center;
   }
@@ -323,7 +323,7 @@
     align-items: center;
     justify-content: space-between;
     gap: $spacing-xxl;
-    background-image: url('../../assets/images/backgrounds/offer-banner.png');
+    background-image: url('/images/backgrounds/offer-banner.png');
     background-size: cover;
     background-position: center;
     padding: rem(80) $spacing-xxl;

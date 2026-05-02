@@ -7,7 +7,7 @@ let currentProducts: Product[] = [];
 let allProducts: Product[] = [];
 
 async function loadProducts(): Promise<Product[]> {
-  const response = await fetch('../assets/data.json');
+  const response = await fetch('/assets/data.json');
   const json = await response.json();
   return json.data;
 }
@@ -27,7 +27,7 @@ function renderProducts(products: Product[]): void {
       (product) => `
     <article class="product__card" data-id="${product.id}">
       ${product.salesStatus ? '<span class="product__sale product__sale--active">SALE</span>' : ''}
-      <img src="../${product.imageUrl}" class="product__img" alt="${product.name}" />
+      <img src="/${product.imageUrl}" class="product__img" alt="${product.name}" />
       <div class="product__info">
         <h3 class="product__name">${product.name}</h3>
         <p class="product__price">$${product.price}</p>
@@ -62,7 +62,7 @@ function renderPagination(total: number): void {
 
   pagination.innerHTML = `
     <button class="pagination__btn pagination__prev" ${currentPage === 1 ? 'disabled' : ''}>
-      <img src="../assets/images/icons/arrow.svg" alt="prev" class="pagination__arrow pagination__arrow--left" />
+      <img src="/images/icons/arrow.svg" alt="prev" class="pagination__arrow pagination__arrow--left" />
       Prev
     </button>
     ${Array.from({ length: totalPages }, (_, i) => i + 1)
@@ -76,7 +76,7 @@ function renderPagination(total: number): void {
       .join('')}
     <button class="pagination__btn pagination__next" ${currentPage === totalPages ? 'disabled' : ''}>
       Next
-      <img src="../assets/images/icons/arrow.svg" alt="next" class="pagination__arrow pagination__arrow--right" />
+      <img src="/images/icons/arrow.svg" alt="next" class="pagination__arrow pagination__arrow--right" />
     </button>
   `;
 

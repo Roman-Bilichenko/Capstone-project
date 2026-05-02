@@ -1,6 +1,6 @@
-@use "../abstracts/variables" as *;
-@use "../abstracts/mixins" as *;
-@use "../abstracts/functions" as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
 
 .cart {
   &__hero {
@@ -9,7 +9,7 @@
     min-height: rem(229);
     background:
       linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)),
-      url("/images/backgrounds/banner-cart.jpg");
+      url('/images/backgrounds/banner-cart.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -77,7 +77,7 @@
   &__item {
     display: grid;
     grid-template-columns: 1fr 2fr repeat(4, 1fr);
-    grid-template-areas: "img name price quantity total delete";
+    grid-template-areas: 'img name price quantity total delete';
     gap: $spacing-xl;
     place-items: center center;
     padding: $spacing-md 0;
@@ -91,9 +91,9 @@
       grid-template-columns: rem(90) repeat(6, 1fr);
       grid-template-rows: repeat(3, 1fr);
       grid-template-areas:
-        "img name name name name name name"
-        "img quantity quantity quantity quantity quantity delete"
-        "img price price price total total total";
+        'img name name name name name name'
+        'img quantity quantity quantity quantity quantity delete'
+        'img price price price total total total';
       gap: $spacing-sm;
       padding: $spacing-md;
     }
@@ -140,7 +140,7 @@
       font-size: rem(13);
 
       &::before {
-        content: "Price: ";
+        content: 'Price: ';
       }
     }
   }
@@ -184,7 +184,7 @@
       font-size: rem(13);
 
       &::before {
-        content: "Total: ";
+        content: 'Total: ';
       }
     }
   }

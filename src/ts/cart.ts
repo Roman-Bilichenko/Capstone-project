@@ -36,7 +36,7 @@ function renderCart(): void {
       .map(
         (item) => `
     <div class="cart__item" data-id="${item.product.id}" data-color="${item.product.color}" data-size="${item.product.size}">
-      <img src="../../${item.product.imageUrl}" alt="${item.product.name}" class="cart__item-img" />
+      <img src="/${item.product.imageUrl}" alt="${item.product.name}" class="cart__item-img" />
       <p class="cart__item-name">${item.product.name}</p>
       <p class="cart__item-price">$${item.product.price.toLocaleString()}</p>
       <div class="cart__item-quantity">
@@ -46,7 +46,7 @@ function renderCart(): void {
       </div>
       <p class="cart__item-total">$${(item.product.price * item.quantity).toLocaleString()}</p>
       <button class="cart__item-delete" data-action="delete">
-        <img src="../assets/images/icons/dump-cart.svg" alt="Delete" />
+        <img src="/images/icons/dump-cart.svg" alt="Delete" />
       </button>
     </div>
   `,

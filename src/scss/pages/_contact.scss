@@ -1,6 +1,6 @@
-@use "../abstracts/variables" as *;
-@use "../abstracts/mixins" as *;
-@use "../abstracts/functions" as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
 
 .contact {
   &__hero {
@@ -9,7 +9,7 @@
     min-height: rem(550);
     background:
       linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)),
-      url("../../assets/images/backgrounds/banner-contact.jpg");
+      url('/images/backgrounds/banner-contact.jpg');
     background-size: cover;
     background-position: center;
     display: flex;

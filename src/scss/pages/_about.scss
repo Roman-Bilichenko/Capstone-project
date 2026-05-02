@@ -1,6 +1,6 @@
-@use "../abstracts/variables" as *;
-@use "../abstracts/mixins" as *;
-@use "../abstracts/functions" as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
 
 .about {
   &__hero {
@@ -9,7 +9,7 @@
     min-height: rem(550);
     background:
       linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)),
-      url("../../assets/images/backgrounds/banner-about.jpg");
+      url('/images/backgrounds/banner-about.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -103,42 +103,42 @@
   }
 
   &__team {
-  margin-bottom: $spacing-xxl;
-  text-align: center;
-}
-
-&__team-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: $spacing-lg;
-
-  @include onTablet {
-    grid-template-columns: 1fr;
-    gap: $spacing-xl;
-  }
-}
-
-&__member {
-  &-img {
-    width: rem(410);
-    height: rem(340);
-    object-fit: cover;
-    margin: 0 auto $spacing-lg;
+    margin-bottom: $spacing-xxl;
+    text-align: center;
   }
 
-  h3 {
-    font-size: rem(22);
-    font-weight: $font-weight-bold;
-    margin-bottom: rem(27);
-    text-transform: uppercase;
-    color: $color-black;
+  &__team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-lg;
+
+    @include onTablet {
+      grid-template-columns: 1fr;
+      gap: $spacing-xl;
+    }
   }
 
-  p {
-    font-size: rem(17);
-    color: $color-black;
+  &__member {
+    &-img {
+      width: rem(410);
+      height: rem(340);
+      object-fit: cover;
+      margin: 0 auto $spacing-lg;
+    }
+
+    h3 {
+      font-size: rem(22);
+      font-weight: $font-weight-bold;
+      margin-bottom: rem(27);
+      text-transform: uppercase;
+      color: $color-black;
+    }
+
+    p {
+      font-size: rem(17);
+      color: $color-black;
+    }
   }
-}
 
   &__offer {
     text-align: center;
@@ -146,7 +146,7 @@
     &-bg {
       background:
         linear-gradient(rgb(0 0 0 / 55%), rgb(0 0 0 / 55%)),
-        url("../assets/images/backgrounds/offer-banner.png");
+        url('/images/backgrounds/offer-banner.png');
       background-size: cover;
       background-position: center;
       padding: $spacing-xxl;
@@ -231,14 +231,14 @@
     align-items: center;
     justify-content: space-between;
     gap: $spacing-xxl;
-    background-image: url("../../assets/images/backgrounds/offer-banner.png");
+    background-image: url('/images/backgrounds/offer-banner.png');
     background-size: cover;
     background-position: center;
     padding: rem(80) $spacing-xxl;
     position: relative;
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
