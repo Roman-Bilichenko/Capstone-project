@@ -17,7 +17,8 @@
     "lint:fix": "eslint \"src/**/*.{ts,js}\" --fix",
     "stylelint": "stylelint \"src/**/*.scss\"",
     "stylelint:fix": "stylelint \"src/**/*.scss\" --fix",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "build:prod": "vite build"
   },
   "repository": {
     "type": "git",
