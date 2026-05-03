@@ -19,7 +19,7 @@ function createProductCard(product: Product): string {
     <article class="product__card" data-id="${product.id}">
       ${product.salesStatus ? '<div class="product__sale product__sale--active">SALE</div>' : '<div class="product__sale">SALE</div>'}
       <img
-        src="/${product.imageUrl}"
+        src="/${product.imageUrl.replace('assets/', '')}"
         alt="${product.name}"
         class="product__img"
       />
