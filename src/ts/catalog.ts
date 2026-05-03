@@ -27,7 +27,7 @@ function renderProducts(products: Product[]): void {
       (product) => `
     <article class="product__card" data-id="${product.id}">
       ${product.salesStatus ? '<span class="product__sale product__sale--active">SALE</span>' : ''}
-      <img src="/${product.imageUrl}" class="product__img" alt="${product.name}" />
+      <img src="/${product.imageUrl.replace('assets/', '')}" class="product__img" alt="${product.name}" />
       <div class="product__info">
         <h3 class="product__name">${product.name}</h3>
         <p class="product__price">$${product.price}</p>
