@@ -5,7 +5,8 @@ let product: Product | null = null;
 let allProducts: Product[] = [];
 
 async function loadProducts(): Promise<Product[]> {
-const response = await fetch('/data.json');  const json = await response.json();
+  const response = await fetch('/data.json');
+  const json = await response.json();
   return json.data;
 }
 
@@ -27,7 +28,7 @@ function renderProduct(): void {
 
   if (title) title.textContent = product.name;
   if (price) price.textContent = `$${product.price}`;
-  if (image) image.src = `../../${product.imageUrl}`;
+  if (image) image.src = `/${product.imageUrl.replace('assets/', '')}`;
   if (reviewProductName) reviewProductName.textContent = product.name;
   if (ratingStars) {
     ratingStars.innerHTML =
@@ -169,7 +170,7 @@ function renderRelated(): void {
       (p) => `
     <article class="product__card" data-id="${p.id}">
       ${p.salesStatus ? '<div class="product__sale product__sale--active">SALE</div>' : ''}
-      <img src="/${p.imageUrl}" class="product__img" alt="${p.name}" />
+      <img src="/${p.imageUrl.replace('assets/', '')}" class="product__img" alt="${p.name}" />
       <div class="product__info">
         <h3 class="product__name">${p.name}</h3>
         <p class="product__price">$${p.price}</p>
