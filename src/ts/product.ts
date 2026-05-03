@@ -5,7 +5,7 @@ let product: Product | null = null;
 let allProducts: Product[] = [];
 
 async function loadProducts(): Promise<Product[]> {
-  const response = await fetch('..//assets/data.json');
+  const response = await /data.json('..//assets/data.json');
   const json = await response.json();
   return json.data;
 }
