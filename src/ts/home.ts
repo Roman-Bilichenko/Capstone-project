@@ -5,7 +5,8 @@ let allProducts: Product[] = [];
 let currentSlide = 0;
 
 async function loadProducts(): Promise<Product[]> {
-const response = await fetch('/data.json');  const json = await response.json();
+  const response = await fetch('/data.json');
+  const json = await response.json();
   return json.data;
 }
 
@@ -18,7 +19,7 @@ function createProductCard(product: Product): string {
     <article class="product__card" data-id="${product.id}">
       ${product.salesStatus ? '<div class="product__sale product__sale--active">SALE</div>' : '<div class="product__sale">SALE</div>'}
       <img
-        src="${product.imageUrl}"
+        src="/${product.imageUrl}"
         alt="${product.name}"
         class="product__img"
       />
@@ -55,25 +56,25 @@ function initTravelSlider(): void {
 
   const slides = [
     {
-      img: '/assets/images/products/travel-suitcase-1.png',
+      img: '/images/products/travel-suitcase-1.png',
       title: 'Adventure Awaits: Explore in Style',
       description:
         'Premium luggage designed for the modern traveler. Lightweight, durable, and ready for any journey.',
     },
     {
-      img: '/assets/images/products/travel-suitcase-2.png',
+      img: '/images/products/travel-suitcase-2.png',
       title: 'Weekend Gateway Essentials',
       description:
         'Compact yet spacious. Perfect for short trips and weekend adventures with everything you need.',
     },
     {
-      img: '/assets/images/products/travel-suitcase-3.png',
+      img: '/images/products/travel-suitcase-3.png',
       title: 'Business Travel Made Easy',
       description:
         'Professional look with smart organization. Keep your suits wrinkle-free and devices protected.',
     },
     {
-      img: '/assets/images/products/travel-suitcase-4.png',
+      img: '/images/products/travel-suitcase-4.png',
       title: 'Family Vacation Companion',
       description:
         'Extra durable for family trips. Spacious compartments keep everyone organized on the go.',
