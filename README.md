@@ -2,6 +2,11 @@
 
 This is a multi-page e-commerce website for a suitcase shop, built with TypeScript and SASS.
 
+
+## Live Demo
+
+**[View Live Site](https://bilichenko-capstone-project.netlify.app)**
+
 ## Prerequisites
 
 - **Node.js** (latest LTS recommended)
