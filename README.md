@@ -25,6 +25,3 @@ npm run dev
 
 This command compiles SCSS to CSS and TypeScript to JavaScript.
 
-## Implementation Checklist
-
-**Score: 61 / 64**
